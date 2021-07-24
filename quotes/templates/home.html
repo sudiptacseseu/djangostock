@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Stock Portfolio
+Stock Portfolio | Home
 {% endblock %}
 
 {% block content %}
+
+<br/><br/>
 
 {% if ticker %}
 <h5>{{ticker}}</h5>
@@ -16,9 +18,9 @@ Stock Portfolio
     {% else %}
         <h1>{{ api.companyName }}</h1><br/>
         Price: ${{api.latestPrice}}<br/>
-        Previous Close: {{api.previousClose}}<br/>
+        Previous Close: ${{api.previousClose}}<br/>
         Market Capital: ${{api.marketCap}}<br/>
-        YTD Change: {{api.ytdChange}}<br/>
+        YTD Change: {{api.ytdChange}}%<br/>
         Week 52 High: ${{api.week52High }}<br/>
         Week 52 Low: ${{api.week52Low  }}<br/>
 <!--        {% for key, value in api.items %}-->
